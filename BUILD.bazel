@@ -1,4 +1,12 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix github.com/codebuild
-gazelle(name = "my-test-project")
+gazelle(
+    name = "bazel_test",
+    args = [
+        "--build_tags=linux,amd64,darwin",
+        "-from_file=go.mod",
+        "-prune",
+    ],
+    command = "update-repos",
+)
