@@ -13,5 +13,5 @@ brew install bazel
 ### Build
 
 ```bash
-bazel run //:bazel_test -- update-repos -from_file=go.mod
+bazel run //cmd/foo:main_app -- update-repos -from_file=go.mod
 ```
