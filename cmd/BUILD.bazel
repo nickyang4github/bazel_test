@@ -1,0 +1,24 @@
+#load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+
+#go_library(
+#    name = "main_lib",
+#    srcs = ["main.go"],
+#    importpath = "github.com/nickyang4github/bazel_test",
+#    visibility = ["//visibility:private"],
+#    deps = [
+#        "@com_github_gin_gonic_gin//:go_default_library"
+#    ],
+#)
+
+go_binary(
+    name = "main_app",
+    srcs = [
+        "main.go"
+    ],
+    importpath = "github.com/nickyang4github/bazel_test",
+    deps = [
+        "@com_github_gin_gonic_gin//:go_default_library"
+    ],
+    visibility = ["//visibility:public"],
+)
